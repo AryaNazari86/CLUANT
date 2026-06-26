@@ -8,8 +8,6 @@ A personal quant analyst plugin for Claude Code. Built for swing traders who do 
 
 This plugin doesn't tell you what to buy. It surfaces every relevant data point — fundamentals, technicals, congressional trades, options flow, macro context — and gives you a suggested verdict you can override with your own judgment.
 
-Built after learning to trade in June 2026, starting with $500 CAD and stocks like SHOP, HOOD, and SPCX.TO.
-
 ---
 
 ## Skills
@@ -27,13 +25,20 @@ Built after learning to trade in June 2026, starting with $500 CAD and stocks li
 ## Installation
 
 ```bash
-# Install from GitHub
-claude plugin install arya/CLUANT
+# Test immediately (no install needed)
+claude --plugin-dir ./CLUANT
+
+# Install from GitHub (once pushed)
+/plugin marketplace add AryaNazari86/CLUANT
+/plugin install CLUANT@AryaNazari86-CLUANT
+/reload-plugins
 
 # Or clone and install locally
-git clone https://github.com/[your-username]/CLUANT
+git clone https://github.com/AryaNazari86/CLUANT
 cd CLUANT
-claude plugin install .
+/plugin marketplace add .
+/plugin install CLUANT@AryaNazari86-CLUANT
+/reload-plugins
 ```
 
 ---
@@ -142,4 +147,3 @@ Built for personal use but open to contributions. If you find better data source
 
 ---
 
-*Built by Arya — CS student, swing trader, perpetual learner.*
