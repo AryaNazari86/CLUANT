@@ -1,6 +1,6 @@
 {
   "name": "CLUANT",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Personal quant analyst for stocks. Pulls fundamentals, technicals, congressional trades, and options flow — then gives you a clean verdict you can override.",
   "author": {
     "name": "AryaNazari86",

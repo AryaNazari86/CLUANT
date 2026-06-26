@@ -1,30 +1,53 @@
 ---
 name: watchlist
-description: Manage your personal stock watchlist. Add, remove, or scan all stocks on your watchlist with a quick analysis. Usage: /watchlist add TICKER, /watchlist remove TICKER, /watchlist show, /watchlist scan
+description: When the user wants to manage their stock watchlist — adding a stock to watch, removing one, viewing what's on their list, or scanning all watchlist stocks for a quick update. Triggers for "add [TICKER] to my watchlist", "remove from watchlist", "show my watchlist", "scan my watchlist", "what am I watching", or any mention of watchlist management.
 ---
 
 # Watchlist Skill
 
-Manage a personal stock watchlist stored in ~/.CLUANT/watchlist.json
+Manage a personal stock watchlist stored in `~/.CLUANT/watchlist.json`. Create the file if it doesn't exist.
 
 ## Commands
 
-### `/watchlist add TICKER [notes]`
-Add a stock to the watchlist with optional notes about your thesis.
-Example: `/watchlist add XPEV Chinese EV play, watching for Q2 delivery numbers`
+### Add a stock
+Triggers: "add TICKER to watchlist", "watch TICKER", "/watchlist add TICKER [notes]"
 
-### `/watchlist remove TICKER`
-Remove a stock from the watchlist.
+Add the stock with optional thesis notes, entry target, stop loss, and price target.
 
-### `/watchlist show`
-Display all stocks currently on the watchlist with their thesis notes and date added.
+### Remove a stock
+Triggers: "remove TICKER from watchlist", "/watchlist remove TICKER"
 
-### `/watchlist scan`
-Run a quick 2-sentence status update on every stock on the watchlist — current price, how far from your noted entry target, and any major news in the last 7 days. Not a full analysis — just a pulse check.
+Remove the entry from the JSON file.
 
-## Storage
+### Show watchlist
+Triggers: "show my watchlist", "what am I watching", "/watchlist show"
 
-Store watchlist data in `~/.CLUANT/watchlist.json` in this format:
+Display all stocks in a clean table:
+| Ticker | Added | Entry Target | Stop | Target | Thesis |
+|---|---|---|---|---|---|
+| XPEV | 2026-06-07 | $15.00 | $11.00 | $22.00 | Chinese EV play... |
+
+### Scan watchlist
+Triggers: "scan my watchlist", "/watchlist scan"
+
+For each stock on the watchlist, run a web search for `[TICKER] stock price today` and `[TICKER] news this week` and deliver a 2-sentence pulse check:
+- Current price vs entry target (how far away?)
+- Any major news in the last 7 days worth knowing
+
+Format:
+```
+WATCHLIST SCAN — [date]
+
+XPEV — $13.42 (entry target $15, you're 11% away)
+News: Q2 delivery numbers beat estimates by 8% — thesis intact.
+
+HOOD — $28.10 (entry target $26, price is above target — monitor for pullback)
+News: No major catalysts this week, market-wide selloff dragging it down.
+```
+
+## Storage Format
+
+`~/.CLUANT/watchlist.json`:
 
 ```json
 {
@@ -32,7 +55,7 @@ Store watchlist data in `~/.CLUANT/watchlist.json` in this format:
     {
       "ticker": "XPEV",
       "added": "2026-06-07",
-      "thesis": "Chinese EV play, watching Q2 delivery numbers, entry target $14-15",
+      "thesis": "Chinese EV play, watching Q2 delivery numbers",
       "entry_target": 15.00,
       "stop_loss": 11.00,
       "price_target": 22.00
@@ -40,5 +63,3 @@ Store watchlist data in `~/.CLUANT/watchlist.json` in this format:
   ]
 }
 ```
-
-Create the file if it doesn't exist. Read and update it on each command.
