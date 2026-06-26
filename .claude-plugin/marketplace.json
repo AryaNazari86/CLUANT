@@ -1,13 +1,15 @@
 {
   "name": "CLUANT",
+  "owner": {
+    "name": "AryaNazari86",
+    "url": "https://github.com/AryaNazari86"
+  },
   "description": "Personal quant analyst plugin for Claude Code",
   "plugins": [
     {
-      "id": "AryaNazari86-CLUANT",
       "name": "CLUANT",
-      "version": "1.0.0",
       "description": "Personal quant analyst for stocks. Pulls fundamentals, technicals, congressional trades, and options flow — then gives you a clean verdict you can override.",
-      "author": "AryaNazari86"
+      "source": "./"
     }
   ]
 }

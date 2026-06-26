@@ -3,13 +3,31 @@
   "name": "CLUANT",
   "version": "1.0.0",
   "description": "Personal quant analyst for stocks. Pulls fundamentals, technicals, congressional trades, and options flow — then gives you a clean verdict you can override.",
-  "author": "AryaNazari86",
+  "author": {
+    "name": "AryaNazari86",
+    "url": "https://github.com/AryaNazari86"
+  },
   "license": "MIT",
   "skills": [
-    "skills/stock-analysis",
-    "skills/watchlist",
-    "skills/portfolio",
-    "skills/congress",
-    "skills/macro"
+    {
+      "name": "analyze",
+      "source": "skills/stock-analysis"
+    },
+    {
+      "name": "watchlist",
+      "source": "skills/watchlist"
+    },
+    {
+      "name": "portfolio",
+      "source": "skills/portfolio"
+    },
+    {
+      "name": "congress",
+      "source": "skills/congress"
+    },
+    {
+      "name": "macro",
+      "source": "skills/macro"
+    }
   ]
 }
