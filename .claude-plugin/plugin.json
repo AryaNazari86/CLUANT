@@ -8,26 +8,5 @@
     "url": "https://github.com/AryaNazari86"
   },
   "license": "MIT",
-  "skills": [
-    {
-      "name": "analyze",
-      "source": "skills/stock-analysis"
-    },
-    {
-      "name": "watchlist",
-      "source": "skills/watchlist"
-    },
-    {
-      "name": "portfolio",
-      "source": "skills/portfolio"
-    },
-    {
-      "name": "congress",
-      "source": "skills/congress"
-    },
-    {
-      "name": "macro",
-      "source": "skills/macro"
-    }
-  ]
+  "skills": "./skills"
 }
