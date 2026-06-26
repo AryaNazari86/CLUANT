@@ -25,20 +25,14 @@ This plugin doesn't tell you what to buy. It surfaces every relevant data point 
 ## Installation
 
 ```bash
-# Test immediately (no install needed)
-claude --plugin-dir ./CLUANT
-
-# Install from GitHub (once pushed)
-/plugin marketplace add AryaNazari86/CLUANT
-/plugin install CLUANT@AryaNazari86-CLUANT
-/reload-plugins
+# Install from GitHub
+claude plugin marketplace add AryaNazari86/CLUANT
+claude plugin install CLUANT
 
 # Or clone and install locally
 git clone https://github.com/AryaNazari86/CLUANT
-cd CLUANT
-/plugin marketplace add .
-/plugin install CLUANT@AryaNazari86-CLUANT
-/reload-plugins
+claude plugin marketplace add ./CLUANT
+claude plugin install CLUANT
 ```
 
 ---
